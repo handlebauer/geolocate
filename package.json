@@ -1,0 +1,44 @@
+{
+  "name": "@hbauer/geolocate",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs"
+  },
+  "module": "./lib/index.mjs",
+  "main": "./lib/index.cjs",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "author": "Donald Geddes",
+  "licence": "MIT",
+  "repository": "https://github.com/handlebauer/geolocate.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": "@hbauer/prettier-config",
+  "eslintConfig": {
+    "extends": "@hbauer/eslint-config"
+  },
+  "scripts": {
+    "build": "shx rm -rf ./lib && rollup -c",
+    "types": "shx rm -rf ./types && tsc -p jsconfig.json",
+    "prepare": "npm run types && npm run build",
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@hbauer/eslint-config": "^1.4.1",
+    "@hbauer/prettier-config": "^1.1.0",
+    "ava": "^4.1.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.1",
+    "rollup": "^2.70.1",
+    "shx": "^0.3.4",
+    "typescript": "^4.6.3"
+  }
+}
